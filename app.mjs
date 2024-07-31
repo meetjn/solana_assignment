@@ -29,14 +29,13 @@ const transactions = [
         },
         "explorer_url": "https://solscan.io/tx/3ShMAXvJczacB1ALpBUdCAbx9FNdoMeAkurH2ePyLQ5t1HwYPi9iUdyn7rhoUogNzbsSdKkJWAZ16kbGSWWJfQTB?cluster=mainnet-beta"
     },
-    // Add more mock transactions as needed
 ];
 
-// Define the GET API endpoint
+// Defined the GET API endpoint
 app.get('/api/transactions/:walletAddress', (req, res) => {
     const { walletAddress } = req.params;
 
-    // Filter transactions for the given wallet address
+    // Filtered transactions for the given wallet address
     const walletTransactions = transactions.filter(tx => tx.wallet_address === walletAddress);
 
     if (walletTransactions.length > 0) {
